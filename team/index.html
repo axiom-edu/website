@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Axiom Education</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/shoelace-autoloader.js"></script>
+    <link rel="preload" href="../assets/people/garv-full.jpg" />
+    <link rel="preload" href="../assets/people/sophie-full.jpg" />
+    <meta name="description" content="All of our tutors are recent 2024 graduates with ATARs of 98.00+ and study scores
+    of 40+. When combined with their fresh knowledge of the latest study designs, they are highly qualified to boost
+    your VCE success. Click here to search for your next tutor now!">
+</head>
+<body>
+
+<div class="wrapper">
+    <nav style="align-content: start;">
+        <ol>
+            <li><a href="../">Welcome</a></li>
+            <li>Our Tutors</li>
+            <li><a href="mailto:contact@axiomeducation.org?subject=Axiom%20Tutoring%20Query">Contact Us</a></li>
+        </ol>
+    </nav>
+    <div class="container">
+        <h1 style="margin-top: 0">Our Tutors</h1>
+        <p>All of our tutors are recent 2024 graduates with ATARs of 98.00+ and study scores of 40+. When combined with their fresh
+            knowledge of the latest study designs, they are highly qualified to boost your VCE success.</p>
+        <p>Please select your subject of interest below to search for a tutor:</p>
+        <sl-select placement="bottom" clearable>
+<!--            <sl-option value="accounting">Accounting</sl-option>-->
+            <sl-option value="biology">Biology</sl-option>
+            <sl-option value="chemistry">Chemistry</sl-option>
+<!--            <sl-option value="english">English</sl-option>-->
+            <sl-option value="english-language">English Language</sl-option>
+            <sl-option value="geography">Geography</sl-option>
+<!--            <sl-option value="global-politics">Global Politics</sl-option>-->
+<!--            <sl-option value="legal-studies">Legal Studies</sl-option>-->
+<!--            <sl-option value="literature">Literature</sl-option>-->
+            <sl-option value="mathematical-methods">Mathematical Methods</sl-option>
+<!--            <sl-option value="media">Media</sl-option>-->
+            <sl-option value="physics">Physics</sl-option>
+<!--            <sl-option value="psychology">Psychology</sl-option>-->
+            <sl-option value="software-development">Software Development</sl-option>
+            <sl-option value="specialist-maths">Specialist Maths</sl-option>
+        </sl-select>
+        <div class="horizontal-scroll" id="tutor-profiles" style="padding-top: 16px; padding-right: 16px; padding-left: 16px"></div>
+    </div>
+    <img src="../assets/horizontal-logo.png" alt="Axiom Logo" style="display:block; margin:auto; width: 300px; padding: 20px">
+</div>
+
+</body>
+</html>
+
+<script type="module">
+    const select = document.querySelector("sl-select")
+    await customElements.whenDefined("sl-select")
+    await select.updateComplete
+    select.popup.flip = false
+    select.addEventListener('sl-change', () => {
+        const subjectDict = {
+                'accounting': {
+                    'shortName': 'Accounting',
+                    'tutors': []
+                },
+                'biology': {
+                    'shortName': 'Biology',
+                    'tutors': ['sophie']
+                },
+                'chemistry': {
+                    'shortName': 'Chemistry',
+                    'tutors': ['sophie']
+                },
+                'english': {
+                    'shortName': 'English',
+                    'tutors': []
+                },
+                'english-language': {
+                    'shortName': 'EngLang',
+                    'tutors': ['garv', 'sophie']
+                },
+                'geography': {
+                    'shortName': 'Geography',
+                    'tutors': ['sophie']
+                },
+                'global-politics': {
+                    'shortName': 'GloPol',
+                    'tutors': []
+                },
+                'legal-studies': {
+                    'shortName': 'Legal',
+                    'tutors': []
+                },
+                'literature': {
+                    'shortName': 'Literature',
+                    'tutors': []
+                },
+                'mathematical-methods': {
+                    'shortName': 'Methods',
+                    'tutors': ['garv', 'sophie']
+                },
+                'media': {
+                    'shortName': 'Media',
+                    'tutors': []
+                },
+                'physics': {
+                    'shortName': 'Physics',
+                    'tutors': ['garv']
+                },
+                'psychology': {
+                    'shortName': 'Psychology',
+                    'tutors': []
+                },
+                'software-development': {
+                    'shortName': 'SoftDev',
+                    'tutors': ['garv']
+                },
+                'specialist-maths': {
+                    'shortName': 'Spec',
+                    'tutors': ['garv']
+                },
+        }
+
+        const tutorInfo = {
+            'garv' : {
+                'name': 'Garv Shah',
+                'atar': '99.50',
+                'subjects': {
+                    'software-development': '45',
+                    'mathematical-methods': '44',
+                    'algorithmics': '39',
+                    'english-language': '41',
+                    'physics': '41',
+                    'specialist-maths': '40',
+                    'umep-maths': '4.5'
+                }
+            },
+            'sophie' : {
+                'name': 'Sophie Chang',
+                'atar': '99.05',
+                'subjects': {
+                    'biology': '47',
+                    'mathematical-methods': '42',
+                    'geography': '43',
+                    'chemistry': '41',
+                    'english-language': '42'
+                }
+            },
+        }
+
+        if (select.value === "") {
+            document.getElementById('tutor-profiles').innerHTML = '';
+        } else {
+            document.getElementById('tutor-profiles').innerHTML = '';
+
+            for (let i = 0; i < subjectDict[select.value]['tutors'].length; i++) {
+                const card = document.createElement('sl-card');
+                const tutor = subjectDict[select.value]['tutors'][i];
+
+                card.className = 'card-overview';
+                card.style = `margin-right: 16px`;
+                card.innerHTML = `
+                    <img
+                        slot="image"
+                        src="../assets/people/${tutor}-full.jpg"
+                        alt="${tutorInfo[tutor]['name']} Banner Image"
+                    />
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong>${tutorInfo[tutor]['name']}</strong><br />
+                            ${subjectDict[select.value]['shortName']} (${tutorInfo[tutor]['subjects'][select.value]})<br />
+                            <small>${tutorInfo[tutor]['atar']}</small>
+                        </div>
+
+                        <sl-button variant="primary">More Info</sl-button>
+                    </div>
+                `;
+
+                document.getElementById('tutor-profiles').appendChild(card);
+            }
+        }
+    });
+</script>

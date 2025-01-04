@@ -53,3 +53,23 @@ nav li {
 nav li a {
     color: inherit;
 }
+
+.card-overview {
+    max-width: 300px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.card-overview small {
+    color: var(--sl-color-neutral-500);
+}
+
+.horizontal-scroll {
+    max-width: 800px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+:not(:defined) {
+    visibility: hidden;
+}
