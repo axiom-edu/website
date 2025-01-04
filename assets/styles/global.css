@@ -6,7 +6,7 @@ body, html {
 }
 
 .container {
-    max-width: 800px;
+    max-width: min(100%, 800px);
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -65,7 +65,7 @@ nav li a {
 }
 
 .horizontal-scroll {
-    max-width: 800px;
+    max-width: min(100%, 800px);
     overflow-x: auto;
     white-space: nowrap;
 }
