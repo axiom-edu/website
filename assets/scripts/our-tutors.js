@@ -30,7 +30,7 @@ select.addEventListener('sl-change', () => {
                             <small>${tutorInfo[tutor]['atar']}</small>
                         </div>
 
-                        <sl-button variant="primary" href="./our-tutors/${tutor}">More Info</sl-button>
+                        <sl-button variant="primary" href="./${tutor}">More Info</sl-button>
                     </div>
                 `;
 
