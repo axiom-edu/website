@@ -5,6 +5,14 @@ body, html {
     display: grid;
 }
 
+ul, ol {
+    font-family: Arial, sans-serif;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
 .container {
     max-width: 800px;
     background-color: white;
@@ -74,4 +82,10 @@ nav li a {
 
 :not(:defined) {
     visibility: hidden;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
 }
