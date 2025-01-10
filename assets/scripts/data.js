@@ -33,7 +33,7 @@ export const subjectDict = {
     },
     'literature': {
         'shortName': 'Literature',
-        'tutors': []
+        'tutors': ['ava']
     },
     'mathematical-methods': {
         'shortName': 'Methods',
@@ -49,7 +49,7 @@ export const subjectDict = {
     },
     'psychology': {
         'shortName': 'Psychology',
-        'tutors': []
+        'tutors': ['ava']
     },
     'software-development': {
         'shortName': 'SoftDev',
@@ -93,6 +93,14 @@ export const tutorInfo = {
             'mathematical-methods': '44',
             'specialist-maths': '44',
             'media': '43',
+        }
+    },
+    'ava' : {
+        'name': 'Ava Goldenberg',
+        'atar': '98.00',
+        'subjects': {
+            'psychology': '49',
+            'literature': '43',
         }
     },
 }
