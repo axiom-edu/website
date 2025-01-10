@@ -37,11 +37,11 @@ export const subjectDict = {
     },
     'mathematical-methods': {
         'shortName': 'Methods',
-        'tutors': ['garv', 'sophie']
+        'tutors': ['garv', 'sophie', 'eric']
     },
     'media': {
         'shortName': 'Media',
-        'tutors': []
+        'tutors': ['eric']
     },
     'physics': {
         'shortName': 'Physics',
@@ -57,7 +57,7 @@ export const subjectDict = {
     },
     'specialist-maths': {
         'shortName': 'Spec',
-        'tutors': ['garv']
+        'tutors': ['garv', 'eric']
     },
 }
 
@@ -84,6 +84,15 @@ export const tutorInfo = {
             'geography': '43',
             'chemistry': '41',
             'english-language': '42'
+        }
+    },
+    'eric' : {
+        'name': 'Eric Lai',
+        'atar': '99.30',
+        'subjects': {
+            'mathematical-methods': '44',
+            'specialist-maths': '44',
+            'media': '43',
         }
     },
 }

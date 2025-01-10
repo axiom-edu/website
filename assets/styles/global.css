@@ -38,6 +38,24 @@ ul, ol {
     padding-top: 16px
 }
 
+.nav-desktop {
+    align-content: start;
+    display: block;
+}
+
+.nav-mobile {
+    align-content: start;
+    display: none;
+}
+
+.badges {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    max-width: 250px
+}
+
 @media (max-width: 850px) {
     .profile-container {
         flex-direction: column;
@@ -48,8 +66,16 @@ ul, ol {
         text-align: center;
     }
 
-    .social-icons {
+    .social-icons, .badges {
         justify-content: center;
+    }
+
+    .nav-desktop {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: block;
     }
 }
 
