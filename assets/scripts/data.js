@@ -1,7 +1,7 @@
 export const subjectDict = {
     'accounting': {
         'shortName': 'Accounting',
-        'tutors': []
+        'tutors': ['helen']
     },
     'biology': {
         'shortName': 'Biology',
@@ -17,7 +17,7 @@ export const subjectDict = {
     },
     'english-language': {
         'shortName': 'EngLang',
-        'tutors': ['garv', 'sophie']
+        'tutors': ['garv', 'sophie', 'helen']
     },
     'geography': {
         'shortName': 'Geography',
@@ -101,6 +101,14 @@ export const tutorInfo = {
         'subjects': {
             'psychology': '49',
             'literature': '43',
+        }
+    },
+    'helen' : {
+        'name': 'Helen Yang',
+        'atar': '99.45',
+        'subjects': {
+            'accounting': '42',
+            'english-language': '41',
         }
     },
 }
