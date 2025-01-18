@@ -17,7 +17,7 @@ export const subjectDict = {
     },
     'english-language': {
         'shortName': 'EngLang',
-        'tutors': ['garv', 'sophie', 'helen']
+        'tutors': ['garv', 'sophie', 'helen', 'farah']
     },
     'geography': {
         'shortName': 'Geography',
@@ -43,6 +43,10 @@ export const subjectDict = {
         'shortName': 'Media',
         'tutors': ['eric']
     },
+    'philosophy': {
+        'shortName': 'Philosophy',
+        'tutors': ['farah']
+    },
     'physics': {
         'shortName': 'Physics',
         'tutors': ['garv']
@@ -58,6 +62,10 @@ export const subjectDict = {
     'specialist-maths': {
         'shortName': 'Spec',
         'tutors': ['garv', 'eric']
+    },
+    'visual-communication-design': {
+        'shortName': 'VisCom',
+        'tutors': ['farah']
     },
 }
 
@@ -109,6 +117,15 @@ export const tutorInfo = {
         'subjects': {
             'accounting': '42',
             'english-language': '41',
+        }
+    },
+    'farah' : {
+        'name': 'Farah Hassan',
+        'atar': '99.40',
+        'subjects': {
+            'english-language': '49',
+            'philosophy': '46',
+            'visual-communication-design': '48',
         }
     },
 }
