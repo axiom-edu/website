@@ -13,7 +13,7 @@ export const subjectDict = {
     },
     'english': {
         'shortName': 'English',
-        'tutors': []
+        'tutors': ['alan']
     },
     'english-language': {
         'shortName': 'EngLang',
@@ -37,7 +37,7 @@ export const subjectDict = {
     },
     'mathematical-methods': {
         'shortName': 'Methods',
-        'tutors': ['garv', 'sophie', 'eric']
+        'tutors': ['garv', 'sophie', 'eric', 'alan']
     },
     'media': {
         'shortName': 'Media',
@@ -126,6 +126,14 @@ export const tutorInfo = {
             'english-language': '49',
             'philosophy': '46',
             'visual-communication-design': '48',
+        }
+    },
+    'alan' : {
+        'name': 'Alan Zhang',
+        'atar': '99.05',
+        'subjects': {
+            'english': '43',
+            'mathematical-methods': '45',
         }
     },
 }
