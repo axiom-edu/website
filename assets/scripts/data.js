@@ -19,17 +19,21 @@ export const subjectDict = {
         'shortName': 'EngLang',
         'tutors': ['garv', 'sophie', 'helen', 'farah']
     },
+    'french': {
+        'shortName': 'French',
+        'tutors': ['liam']
+    },
     'geography': {
         'shortName': 'Geography',
-        'tutors': ['sophie']
+        'tutors': ['sophie', 'liam']
     },
     'global-politics': {
         'shortName': 'GloPol',
-        'tutors': []
+        'tutors': ['liam']
     },
     'legal-studies': {
         'shortName': 'Legal',
-        'tutors': []
+        'tutors': ['liam']
     },
     'literature': {
         'shortName': 'Literature',
@@ -134,6 +138,16 @@ export const tutorInfo = {
         'subjects': {
             'english': '43',
             'mathematical-methods': '45',
+        }
+    },
+    'liam' : {
+        'name': 'Liam Shaw',
+        'atar': '99.10',
+        'subjects': {
+            'global-politics': '49',
+            'legal-studies': '46',
+            'geography': '43',
+            'french': '43'
         }
     },
 }
