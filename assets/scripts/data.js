@@ -132,14 +132,6 @@ export const tutorInfo = {
             'visual-communication-design': '48',
         }
     },
-    'alan' : {
-        'name': 'Alan Zhang',
-        'atar': '99.05',
-        'subjects': {
-            'english': '43',
-            'mathematical-methods': '45',
-        }
-    },
     'liam' : {
         'name': 'Liam Shaw',
         'atar': '99.10',
