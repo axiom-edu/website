@@ -3,21 +3,13 @@ export const subjectDict = {
         'shortName': 'Accounting',
         'tutors': ['helen']
     },
-    'biology': {
-        'shortName': 'Biology',
-        'tutors': ['sophie']
-    },
-    'chemistry': {
-        'shortName': 'Chemistry',
-        'tutors': ['sophie']
-    },
     'english': {
         'shortName': 'English',
         'tutors': ['alan']
     },
     'english-language': {
         'shortName': 'EngLang',
-        'tutors': ['garv', 'sophie', 'helen', 'farah']
+        'tutors': ['garv', 'helen', 'farah']
     },
     'french': {
         'shortName': 'French',
@@ -25,7 +17,7 @@ export const subjectDict = {
     },
     'geography': {
         'shortName': 'Geography',
-        'tutors': ['sophie', 'liam']
+        'tutors': ['liam']
     },
     'global-politics': {
         'shortName': 'GloPol',
@@ -41,7 +33,7 @@ export const subjectDict = {
     },
     'mathematical-methods': {
         'shortName': 'Methods',
-        'tutors': ['garv', 'sophie', 'eric', 'alan']
+        'tutors': ['garv', 'eric', 'alan']
     },
     'media': {
         'shortName': 'Media',
@@ -85,17 +77,6 @@ export const tutorInfo = {
             'physics': '41',
             'specialist-maths': '40',
             'umep-maths': '4.5'
-        }
-    },
-    'sophie' : {
-        'name': 'Sophie Chang',
-        'atar': '99.05',
-        'subjects': {
-            'biology': '47',
-            'mathematical-methods': '42',
-            'geography': '43',
-            'chemistry': '41',
-            'english-language': '42'
         }
     },
     'eric' : {
