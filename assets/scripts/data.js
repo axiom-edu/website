@@ -3,13 +3,9 @@ export const subjectDict = {
         'shortName': 'Accounting',
         'tutors': ['helen']
     },
-    'english': {
-        'shortName': 'English',
-        'tutors': ['alan']
-    },
     'english-language': {
         'shortName': 'EngLang',
-        'tutors': ['garv', 'helen', 'farah']
+        'tutors': ['farah', 'garv', 'helen']
     },
     'french': {
         'shortName': 'French',
@@ -33,7 +29,7 @@ export const subjectDict = {
     },
     'mathematical-methods': {
         'shortName': 'Methods',
-        'tutors': ['garv', 'eric', 'alan']
+        'tutors': ['garv', 'eric']
     },
     'media': {
         'shortName': 'Media',
