@@ -5,7 +5,7 @@ export const subjectDict = {
     },
     'english-language': {
         'shortName': 'EngLang',
-        'tutors': ['farah', 'garv', 'helen']
+        'tutors': ['farah', 'helen']
     },
     'french': {
         'shortName': 'French',
