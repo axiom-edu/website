@@ -39,10 +39,6 @@ export const subjectDict = {
         'shortName': 'Philosophy',
         'tutors': ['farah']
     },
-    'physics': {
-        'shortName': 'Physics',
-        'tutors': ['garv']
-    },
     'psychology': {
         'shortName': 'Psychology',
         'tutors': ['ava']
