@@ -97,7 +97,7 @@
 
 <div class="min-h-screen font-sans text-base-content relative overflow-hidden">
   <!-- HERO SECTION -->
-  <section class="relative pt-20 pb-32 px-4 text-center">
+  <section class="relative pt-20 pb-32 px-4 sm:px-4 mobile-padding text-center">
     <!-- 3D Background -->
     <Hero3D />
 
@@ -150,7 +150,7 @@
       </div>
 
       <div
-        class="mt-12 flex justify-center gap-8 text-xs font-semibold text-base-content/70"
+        class="hero-checkboxes mt-12 flex justify-center gap-8 text-xs font-semibold text-base-content/70 mx-auto"
       >
         <span class="flex items-center gap-1"
           ><span
@@ -202,7 +202,10 @@
   </section>
 
   <!-- ABOUT SECTION -->
-  <section id="about" class="pt-10 md:pt-20 pb-20 px-4 container mx-auto">
+  <section
+    id="about"
+    class="pt-10 md:pt-20 pb-20 px-4 sm:px-4 mobile-padding container mx-auto"
+  >
     <div class="flex flex-col lg:flex-row gap-12">
       <div class="lg:w-1/3">
         <span class="text-primary font-bold text-sm uppercase tracking-wide"
@@ -220,8 +223,8 @@
           <br />
           At Axiom, we are able to provide both personalised teaching
           <em>and</em> the best resources possible, with a network of high-achieving
-          tutors constantly collaborating to create the best resources for every
-          student's VCE success.
+          tutors constantly collaborating to create the best resources for every student's
+          VCE success.
         </p>
         <ul class="space-y-4">
           <li
@@ -408,7 +411,10 @@
   </section> -->
 
   <!-- COURSES -->
-  <section id="programs" class="courses-section py-20 px-4">
+  <section
+    id="programs"
+    class="courses-section py-20 px-4 sm:px-4 mobile-padding"
+  >
     <div class="container mx-auto">
       <div class="text-center mb-12">
         <span class="text-primary font-bold text-sm uppercase tracking-wide"
@@ -600,7 +606,10 @@
 
   <!-- STUDENT VOICE & FOOTER -->
   <!-- Creating a custom footer here to match design structure -->
-  <section id="trial" class="py-10 px-4 container mx-auto text-center relative">
+  <section
+    id="trial"
+    class="py-10 px-4 sm:px-4 mobile-padding container mx-auto text-center relative"
+  >
     <!-- <span class="text-primary font-bold text-sm uppercase tracking-wide"
       >Our Student Voice</span
     >

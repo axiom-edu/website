@@ -101,3 +101,29 @@ button[disabled].authBtn::before {
   content: "Loading...";
   color: oklch(var(--pc));
 }
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  /* Ensure background extends into iOS safe area */
+  html {
+    background: var(--color-base-100);
+  }
+  
+  /* Increase horizontal padding on mobile */
+  .mobile-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Hero checkboxes triangle layout */
+  .hero-checkboxes {
+    flex-wrap: wrap;
+    max-width: 280px;
+    gap: 0.5rem 1.5rem;
+  }
+  
+  .hero-checkboxes > span:nth-child(3) {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}
