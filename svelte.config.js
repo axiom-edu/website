@@ -1,10 +1,10 @@
-import adapter from "@sveltejs/adapter-auto"
+import adapter from "@sveltejs/adapter-cloudflare"
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte"
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
-    // adapter-auto will auto-detect Cloudflare Pages
+    // Use Cloudflare Pages adapter for deployment
     adapter: adapter(),
     // allow up to 150kb of style to be inlined with the HTML
     // Faster FCP (First Contentful Paint) by reducing the number of requests
