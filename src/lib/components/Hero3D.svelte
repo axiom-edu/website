@@ -9,8 +9,16 @@
   let currentWidth = 1
   let currentHeight = 1
 
+  // Track whether the scene is ready for animation
+  let isSceneReady = false
+
   onMount(() => {
     const scene = new THREE.Scene()
+
+    // Animation entrance state
+    let entranceStartTime: number | null = null
+    const ENTRANCE_DURATION = 1.2 // seconds for full entrance animation
+    const STAGGER_DELAY = 0.08 // seconds between each shape starting
 
     // Helper to get CSS variable color
     const getCssColor = (name: string) => {
@@ -215,8 +223,31 @@
 
     // Animation loop - computes responsive positions every frame using reactive dimensions
     const clock = new THREE.Clock()
+
+    // Easing function for smooth entrance (easeOutBack - slight overshoot)
+    const easeOutBack = (t: number): number => {
+      const c1 = 1.70158
+      const c3 = c1 + 1
+      return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2)
+    }
+
+    // Easing function for smooth fade (easeOutQuad)
+    const easeOutQuad = (t: number): number => {
+      return 1 - (1 - t) * (1 - t)
+    }
+
     const animate = () => {
       const time = clock.getElapsedTime()
+
+      // Start entrance animation on first frame
+      if (entranceStartTime === null) {
+        entranceStartTime = time
+        // Trigger canvas fade-in
+        isSceneReady = true
+      }
+
+      // Calculate entrance progress
+      const entranceElapsed = time - entranceStartTime
 
       // ============================================
       // RESPONSIVE CALCULATIONS
@@ -277,6 +308,18 @@
         const baseScale = baseScales[i]
         const rowType = getRowType(i)
 
+        // ============================================
+        // ENTRANCE ANIMATION
+        // ============================================
+        // Each shape starts with a staggered delay
+        const shapeDelay = i * STAGGER_DELAY
+        const shapeEntranceElapsed = Math.max(0, entranceElapsed - shapeDelay)
+        const entranceProgress = Math.min(
+          1,
+          shapeEntranceElapsed / ENTRANCE_DURATION,
+        )
+        const entranceScale = easeOutBack(entranceProgress)
+
         // Calculate animated Y offset (subtle floating motion)
         const animatedYOffset = Math.sin(time * 0.8 + i * 10) * 0.06
 
@@ -304,9 +347,9 @@
         shape.position.y = basePos.y + animatedYOffset
         shape.position.z = basePos.z
 
-        // Apply responsive scaling
-        const scale = baseScale * objectScale
-        shape.scale.set(scale, scale, scale)
+        // Apply responsive scaling WITH entrance animation
+        const finalScale = baseScale * objectScale * entranceScale
+        shape.scale.set(finalScale, finalScale, finalScale)
 
         // Very slow, gentle rotation
         shape.rotation.x += 0.001
@@ -367,5 +410,9 @@
   bind:this={container}
   class="absolute inset-0 w-full h-full pointer-events-none z-0 hidden md:block"
 >
-  <canvas bind:this={canvas} class="w-full h-full" style="opacity: 1;"></canvas>
+  <canvas
+    bind:this={canvas}
+    class="w-full h-full"
+    style="opacity: {isSceneReady ? 1 : 0}; transition: opacity 0.8s ease-out;"
+  ></canvas>
 </div>
