@@ -9,6 +9,7 @@ export const GET: RequestHandler = async () => {
     origin: WebsiteBaseUrl,
     excludeRoutePatterns: [
       ".*\\(admin\\).*", // i.e. exclude routes within admin group
+      ".*\\/blog.*", // exclude blog until implemented
     ],
     paramValues: {
       "/our-tutors/[tutor]": ["eric", "garv", "ava", "helen"],
