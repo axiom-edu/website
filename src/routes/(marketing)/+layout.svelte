@@ -49,8 +49,8 @@
           tabindex="0"
           class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li><a href="#about">Why Axiom</a></li>
-          <li><a href="#programs">Programs</a></li>
+          <li><a href="/#about">Why Axiom</a></li>
+          <li><a href="/#programs">Programs</a></li>
           <li><a href="/our-tutors">Our Tutors</a></li>
         </ul>
       </div>
@@ -69,8 +69,8 @@
       <ul
         class="menu menu-horizontal px-1 font-medium text-base text-base-content/80"
       >
-        <li><a href="#about">Why Axiom</a></li>
-        <li><a href="#programs">Programs</a></li>
+        <li><a href="/#about">Why Axiom</a></li>
+        <li><a href="/#programs">Programs</a></li>
         <li><a href="/our-tutors">Our Tutors</a></li>
       </ul>
     </div>

@@ -5,7 +5,7 @@ import { convert } from "html-to-text"
 import JSDOM from "jsdom"
 import Fuse from "fuse.js"
 
-const excludePaths = ["/search"]
+const excludePaths = ["/search", "/blog"]
 
 export async function buildSearchIndex() {
   const indexData = []
