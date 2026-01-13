@@ -1,2 +1,2 @@
-# Axiom Education
-Temporary website for the Axiom Education Group
+# Axiom Website
+Using the starter website template from https://github.com/scosman/CMSaasStarter

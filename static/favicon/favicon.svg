@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><style>
+    #light-icon {
+      display: inline;
+    }
+    #dark-icon {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #light-icon {
+        display: none;
+      }
+      #dark-icon {
+        display: inline;
+      }
+    }
+  </style><g id="light-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g><g transform="matrix(5.555555555555555,0,0,5.555555555555555,0,0)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="180"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #f0f;
+      }
+
+      .cls-3 {
+        fill: blue;
+      }
+
+      .cls-2 {
+        opacity: .5;
+      }
+    </style>
+  </defs>
+  <rect class="cls-2" x="53.36" y="-15.91" width="24.23" height="140.77" rx="12.11" ry="12.11" transform="translate(148.54 35.61) rotate(127.44)"></rect>
+  <rect class="cls-2" x="78.2" y="-64.17" width="24.23" height="166.44" rx="12.11" ry="12.11" transform="translate(71.27 109.36) rotate(-90)"></rect>
+  <rect class="cls-2" x="53.29" y="54.88" width="24.23" height="140.82" rx="12.11" ry="12.11" transform="translate(5.7 253.4) rotate(-127.44)"></rect>
+  <rect class="cls-1" x="93.94" y="93.69" width="24.23" height="134.38" rx="12.11" ry="12.11" transform="translate(-54.83 266.94) rotate(-90)"></rect>
+  <path class="cls-3" d="M172.36,14.17h0c2.87,6.32.29,13.86-5.77,16.86L24.75,101.18c-6.05,2.99-13.29.3-16.16-6.02h0c-2.87-6.32-.29-13.86,5.77-16.86L156.2,8.16c6.05-2.99,13.29-.3,16.16,6.02Z"></path>
+  <path class="cls-3" d="M172.27,165.76h0c2.87-6.32.29-13.86-5.77-16.86L24.66,78.74c-6.05-2.99-13.29-.3-16.16,6.02h0c-2.87,6.32-.29,13.86,5.77,16.86l141.84,70.15c6.05,2.99,13.29.3,16.16-6.02Z"></path>
+  <rect class="cls-3" x="148.98" y="114.84" width="24.23" height="58.15" rx="12.11" ry="12.11" transform="translate(322.19 287.84) rotate(180)"></rect>
+  <rect class="cls-3" x="149.3" y="6.94" width="24.23" height="58.15" rx="12.11" ry="12.11" transform="translate(322.84 72.03) rotate(180)"></rect>
+  <circle class="cls-1" cx="18.94" cy="160.88" r="12.19"></circle>
+</svg></svg></g></g></svg></g><g id="dark-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1024)"><rect width="1000" height="1000" fill="#ffffff"></rect><g transform="matrix(3.888888888888889,0,0,3.888888888888889,150,150)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="180"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #f0f;
+      }
+
+      .cls-3 {
+        fill: blue;
+      }
+
+      .cls-2 {
+        opacity: .5;
+      }
+    </style>
+  <clipPath id="SvgjsClipPath1024"><rect width="1000" height="1000" x="0" y="0" rx="250" ry="250"></rect></clipPath></defs>
+  <rect class="cls-2" x="53.36" y="-15.91" width="24.23" height="140.77" rx="12.11" ry="12.11" transform="translate(148.54 35.61) rotate(127.44)"></rect>
+  <rect class="cls-2" x="78.2" y="-64.17" width="24.23" height="166.44" rx="12.11" ry="12.11" transform="translate(71.27 109.36) rotate(-90)"></rect>
+  <rect class="cls-2" x="53.29" y="54.88" width="24.23" height="140.82" rx="12.11" ry="12.11" transform="translate(5.7 253.4) rotate(-127.44)"></rect>
+  <rect class="cls-1" x="93.94" y="93.69" width="24.23" height="134.38" rx="12.11" ry="12.11" transform="translate(-54.83 266.94) rotate(-90)"></rect>
+  <path class="cls-3" d="M172.36,14.17h0c2.87,6.32.29,13.86-5.77,16.86L24.75,101.18c-6.05,2.99-13.29.3-16.16-6.02h0c-2.87-6.32-.29-13.86,5.77-16.86L156.2,8.16c6.05-2.99,13.29-.3,16.16,6.02Z"></path>
+  <path class="cls-3" d="M172.27,165.76h0c2.87-6.32.29-13.86-5.77-16.86L24.66,78.74c-6.05-2.99-13.29-.3-16.16,6.02h0c-2.87,6.32-.29,13.86,5.77,16.86l141.84,70.15c6.05,2.99,13.29.3,16.16-6.02Z"></path>
+  <rect class="cls-3" x="148.98" y="114.84" width="24.23" height="58.15" rx="12.11" ry="12.11" transform="translate(322.19 287.84) rotate(180)"></rect>
+  <rect class="cls-3" x="149.3" y="6.94" width="24.23" height="58.15" rx="12.11" ry="12.11" transform="translate(322.84 72.03) rotate(180)"></rect>
+  <circle class="cls-1" cx="18.94" cy="160.88" r="12.19"></circle>
+</svg></svg></g></g></svg></g></svg>

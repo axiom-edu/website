@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #f0f;
+      }
+
+      .cls-3 {
+        font-family: Galvji, Galvji;
+        font-size: 47.91px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #231f20;
+      }
+
+      .cls-5 {
+        fill: blue;
+      }
+
+      .cls-2 {
+        opacity: .5;
+      }
+
+      .cls-4 {
+        font-family: Galvji-Bold, Galvji;
+        font-size: 75.75px;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <text class="cls-3" transform="translate(196.75 149.85) scale(.98 1)"><tspan x="0" y="0">Education</tspan></text>
+  <text class="cls-4" transform="translate(198.74 104.5) scale(.98 1)"><tspan x="0" y="0">Axiom</tspan></text>
+  <rect class="cls-2" x="62.53" y="-4.28" width="24.23" height="140.77" rx="12.11" ry="12.11" transform="translate(172.51 47.05) rotate(127.44)"/>
+  <rect class="cls-2" x="87.36" y="-52.54" width="24.23" height="166.44" rx="12.11" ry="12.11" transform="translate(68.8 130.16) rotate(-90)"/>
+  <rect class="cls-2" x="62.45" y="66.52" width="24.23" height="140.82" rx="12.11" ry="12.11" transform="translate(11.19 279.38) rotate(-127.44)"/>
+  <rect class="cls-1" x="103.1" y="105.32" width="24.23" height="134.38" rx="12.11" ry="12.11" transform="translate(-57.3 287.73) rotate(-90)"/>
+  <circle class="cls-1" cx="28.1" cy="172.52" r="12.19"/>
+  <path class="cls-5" d="M181.52,25.81h0c2.87,6.32.29,13.86-5.77,16.86L33.91,112.82c-6.05,2.99-13.29.3-16.16-6.02h0c-2.87-6.32-.29-13.86,5.77-16.86L165.36,19.79c6.05-2.99,13.29-.3,16.16,6.02Z"/>
+  <path class="cls-5" d="M181.2,177.28h0c2.87-6.32.3-13.86-5.75-16.85L33.81,90.37c-6.05-2.99-13.27-.29-16.14,6.02h0c-2.87,6.32-.3,13.86,5.75,16.85l141.64,70.06c6.05,2.99,13.27.29,16.14-6.02Z"/>
+  <rect class="cls-5" x="158.65" y="126.48" width="24.23" height="58.15" rx="12.11" ry="12.11" transform="translate(341.53 311.11) rotate(-180)"/>
+  <rect class="cls-5" x="158.47" y="18.57" width="24.23" height="58.15" rx="12.11" ry="12.11" transform="translate(341.16 95.29) rotate(-180)"/>
+</svg>

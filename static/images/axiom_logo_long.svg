@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1187.41 176">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #f0f;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+        font-size: 120px;
+      }
+
+      .cls-4 {
+        fill: blue;
+      }
+
+      .cls-5 {
+        font-family: Galvji, Galvji;
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        opacity: .5;
+      }
+
+      .cls-6 {
+        font-family: Galvji-Bold, Galvji;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <text class="cls-3" transform="translate(204.72 132.63) scale(.98 1)"><tspan class="cls-6" x="0" y="0">Axiom </tspan><tspan class="cls-5" x="408.57" y="0">Education</tspan></text>
+  <rect class="cls-2" x="51.39" y="-17.64" width="24.23" height="140.77" rx="12.11" ry="12.11" transform="translate(144 34.4) rotate(127.44)"/>
+  <rect class="cls-2" x="76.23" y="-65.9" width="24.23" height="166.44" rx="12.11" ry="12.11" transform="translate(71.02 105.66) rotate(-90)"/>
+  <rect class="cls-2" x="51.32" y="53.16" width="24.23" height="140.82" rx="12.11" ry="12.11" transform="translate(3.89 249.06) rotate(-127.44)"/>
+  <rect class="cls-1" x="91.97" y="91.96" width="24.23" height="134.38" rx="12.11" ry="12.11" transform="translate(-55.07 263.23) rotate(-90)"/>
+  <circle class="cls-1" cx="16.96" cy="159.15" r="12.19"/>
+  <path class="cls-4" d="M170.39,12.44h0c2.87,6.32.29,13.86-5.77,16.86L22.78,99.46c-6.05,2.99-13.29.3-16.16-6.02h0c-2.87-6.32-.29-13.86,5.77-16.86L154.23,6.43c6.05-2.99,13.29-.3,16.16,6.02Z"/>
+  <path class="cls-4" d="M170.06,163.92h0c2.87-6.32.3-13.86-5.75-16.85L22.67,77.01c-6.05-2.99-13.27-.29-16.14,6.02h0c-2.87,6.32-.3,13.86,5.75,16.85l141.64,70.06c6.05,2.99,13.27.29,16.14-6.02Z"/>
+  <rect class="cls-4" x="147.51" y="113.11" width="24.23" height="58.15" rx="12.11" ry="12.11" transform="translate(319.26 284.38) rotate(-180)"/>
+  <rect class="cls-4" x="147.33" y="5.21" width="24.23" height="58.15" rx="12.11" ry="12.11" transform="translate(318.89 68.57) rotate(-180)"/>
+</svg>

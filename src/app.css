@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@plugin '@tailwindcss/typography';
+
+@plugin "daisyui" {
+  /* Disable all other themes which forces the default theme created below. You can add a dark mode theme using daisyui if you like, and it will automatically use it when the user's system is in dark mode. Docs: https://daisyui.com/docs/themes/ */
+  themes: false;
+}
+
+@plugin "daisyui/theme" {
+  name: "saasstartertheme";
+  default: true;
+  /* set as default */
+  prefersdark: false;
+  /* set as default dark mode (prefers-color-scheme:dark) */
+  color-scheme: light;
+  /* color of browser-provided UI */
+
+  /* Axiom Brand Colors */
+  --color-primary: #5b21b6;
+  /* Deep Purple Button */
+  --color-primary-content: #ffffff;
+  --color-secondary: #a78bfa;
+  /* Lighter Purple */
+  --color-secondary-content: #ffffff;
+  --color-accent: #7c3aed;
+  /* Vibrant Purple */
+  --color-accent-content: #ffffff;
+  --color-neutral: #312e81;
+  /* Dark Indigo Text */
+  --color-neutral-content: #ffffff;
+
+  --color-base-100: #F6F5FE;
+  /* Main Background (Very Light Purple) */
+  --color-base-200: #ede9fe;
+  /* Secondary Background */
+  --color-base-300: #ddd6fe;
+  --color-base-content: #1e1b4b;
+  /* Main Text */
+
+  --color-info: oklch(70% 0.2 220);
+  --color-info-content: oklch(98% 0.01 220);
+  --color-success: #37d399;
+  --color-success-content: oklch(98% 0.01 140);
+  --color-warning: oklch(80% 0.25 80);
+  --color-warning-content: oklch(20% 0.05 80);
+  --color-error: #f77272;
+  --color-error-content: oklch(98% 0.01 30);
+
+  /* 3D Hero Elements */
+  --color-3d-fog: #f0f0f5;
+  --color-3d-ambient: #b0a4e3;
+  --color-3d-main-light: #ffffff;
+  --color-3d-rim-light: #ffd1dc;
+  --color-3d-material: #f2f0ff;
+
+  /* border radius */
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* border size */
+  --border: 1px;
+
+  /* effects */
+  --depth: 1;
+  --noise: 0;
+}
+
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+a {
+  @apply cursor-pointer;
+}
+
+/* Hack to temporarily solve https://github.com/supabase/auth-ui/issues/219 */
+.authBtn {
+  @apply btn;
+}
+
+button[disabled].authBtn {
+  font-size: 0.001px;
+  filter: brightness(65%);
+}
+
+button[disabled].authBtn::before {
+  font-size: 14px;
+  content: "Loading...";
+  color: oklch(var(--pc));
+}
