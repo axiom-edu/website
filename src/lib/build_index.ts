@@ -35,7 +35,12 @@ export async function buildSearchIndex() {
           { selector: "img", format: "skip" },
         ],
       })
-      const dom = new JSDOM.JSDOM(data)
+      // Use a virtual console to suppress CSS parsing errors from modern CSS features
+      const virtualConsole = new JSDOM.VirtualConsole()
+      virtualConsole.on("error", () => {
+        // Suppress CSS parsing errors (jsdom doesn't support @property, @layer, etc.)
+      })
+      const dom = new JSDOM.JSDOM(data, { virtualConsole })
       const title =
         dom.window.document.querySelector("title")?.textContent ||
         "Page " + webPath
