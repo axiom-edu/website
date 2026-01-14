@@ -25,8 +25,81 @@
     document.body.style.overflow = ""
   }
 
-  onMount(() => {
-    // Load Fillout script dynamically for navbar button
+  // Helper function to get a cookie value by name
+  const getCookie = (name: string): string | null => {
+    const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"))
+    return match ? match[2] : null
+  }
+
+  // Helper function to get URL parameter
+  const getUrlParam = (name: string): string | null => {
+    const urlParams = new URLSearchParams(window.location.search)
+    return urlParams.get(name)
+  }
+
+  // Function to collect Meta tracking data
+  const collectMetaTrackingData = async (): Promise<string | null> => {
+    try {
+      // Collect tracking data
+      const trackingData: {
+        ip?: string
+        fbc?: string
+        fbp?: string
+        ua?: string
+      } = {}
+
+      // Get IP address from ipify.org
+      try {
+        const ipResponse = await fetch("https://api.ipify.org?format=json")
+        const ipData = await ipResponse.json()
+        trackingData.ip = ipData.ip
+      } catch (e) {
+        console.warn("Could not fetch IP address:", e)
+      }
+
+      // Get Meta Click ID (_fbc cookie or fbclid URL parameter)
+      const fbcCookie = getCookie("_fbc")
+      const fbclid = getUrlParam("fbclid")
+      if (fbcCookie) {
+        trackingData.fbc = fbcCookie
+      } else if (fbclid) {
+        // Generate fbc format: fb.1.<timestamp>.<fbclid>
+        const timestamp = Date.now()
+        trackingData.fbc = `fb.1.${timestamp}.${fbclid}`
+      }
+
+      // Get Meta Browser ID (_fbp cookie)
+      const fbpCookie = getCookie("_fbp")
+      if (fbpCookie) {
+        trackingData.fbp = fbpCookie
+      }
+
+      // Get User Agent
+      trackingData.ua = navigator.userAgent
+
+      // Only return if we have any tracking data
+      if (Object.keys(trackingData).length > 0) {
+        // Encode to Base64
+        const jsonString = JSON.stringify(trackingData)
+        return btoa(jsonString)
+      }
+      return null
+    } catch (e) {
+      console.warn("Meta tracking data collection error:", e)
+      return null
+    }
+  }
+
+  // Apply tracking data to all Fillout buttons
+  const applyTrackingToButtons = (base64Data: string) => {
+    const filloutButtons = document.querySelectorAll("[data-fillout-id]")
+    filloutButtons.forEach((button) => {
+      button.setAttribute("data-data", base64Data)
+    })
+  }
+
+  // Load the Fillout embed script
+  const loadFilloutScript = () => {
     if (
       !document.querySelector(
         'script[src="https://server.fillout.com/embed/v1/"]',
@@ -37,6 +110,58 @@
       filloutScript.async = true
       document.body.appendChild(filloutScript)
     }
+  }
+
+  onMount(() => {
+    // Step 1: Collect tracking data first
+    // Step 2: Apply to buttons
+    // Step 3: THEN load Fillout script
+    collectMetaTrackingData().then((trackingData) => {
+      if (trackingData) {
+        applyTrackingToButtons(trackingData)
+      }
+      // Load Fillout script AFTER tracking data is applied
+      loadFilloutScript()
+
+      // Watch for new Fillout buttons added to the DOM
+      const observer = new MutationObserver((mutations) => {
+        // Check if any new fillout buttons were added
+        for (const mutation of mutations) {
+          for (const node of mutation.addedNodes) {
+            if (node instanceof Element) {
+              const newButtons = node.querySelectorAll
+                ? node.querySelectorAll("[data-fillout-id]:not([data-data])")
+                : []
+              if (
+                node.matches?.("[data-fillout-id]:not([data-data])") ||
+                newButtons.length > 0
+              ) {
+                // Apply tracking data to new buttons
+                if (trackingData) {
+                  applyTrackingToButtons(trackingData)
+                }
+                // Re-initialize Fillout for new buttons by removing initialized flag
+                const uninitializedButtons = document.querySelectorAll(
+                  "[data-fillout-id]:not([data-fillout-initialized])",
+                )
+                if (uninitializedButtons.length > 0) {
+                  // Trigger Fillout re-scan by re-adding script
+                  const existingScript = document.querySelector(
+                    'script[src="https://server.fillout.com/embed/v1/"]',
+                  )
+                  if (existingScript) {
+                    existingScript.remove()
+                  }
+                  loadFilloutScript()
+                }
+                break
+              }
+            }
+          }
+        }
+      })
+      observer.observe(document.body, { childList: true, subtree: true })
+    })
 
     return () => {
       document.body.style.overflow = ""

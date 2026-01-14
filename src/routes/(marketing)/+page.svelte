@@ -76,12 +76,6 @@
     const handleResize = () => updateActiveDot()
     window.addEventListener("resize", handleResize)
 
-    // Load Fillout script dynamically after DOM is ready
-    const filloutScript = document.createElement("script")
-    filloutScript.src = "https://server.fillout.com/embed/v1/"
-    filloutScript.async = true
-    document.body.appendChild(filloutScript)
-
     return () => {
       if (carouselElement) {
         carouselElement.removeEventListener("scroll", updateActiveDot)
