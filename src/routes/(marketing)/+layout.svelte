@@ -113,57 +113,59 @@
   }
 
   onMount(() => {
-    // Step 1: Collect tracking data first
-    // Step 2: Apply to buttons
-    // Step 3: THEN load Fillout script
-    collectMetaTrackingData().then((trackingData) => {
-      if (trackingData) {
-        applyTrackingToButtons(trackingData)
-      }
-      // Load Fillout script AFTER tracking data is applied
-      loadFilloutScript()
+    // Load Fillout script immediately so CTA buttons work quickly
+    loadFilloutScript()
 
-      // Watch for new Fillout buttons added to the DOM
-      const observer = new MutationObserver((mutations) => {
-        // Check if any new fillout buttons were added
-        for (const mutation of mutations) {
-          for (const node of mutation.addedNodes) {
-            if (node instanceof Element) {
-              const newButtons = node.querySelectorAll
-                ? node.querySelectorAll("[data-fillout-id]:not([data-data])")
-                : []
-              if (
-                node.matches?.("[data-fillout-id]:not([data-data])") ||
-                newButtons.length > 0
-              ) {
-                // Apply tracking data to new buttons
-                if (trackingData) {
-                  applyTrackingToButtons(trackingData)
-                }
-                // Re-initialize Fillout for new buttons by removing initialized flag
-                const uninitializedButtons = document.querySelectorAll(
-                  "[data-fillout-id]:not([data-fillout-initialized])",
-                )
-                if (uninitializedButtons.length > 0) {
-                  // Trigger Fillout re-scan by re-adding script
-                  const existingScript = document.querySelector(
-                    'script[src="https://server.fillout.com/embed/v1/"]',
-                  )
-                  if (existingScript) {
-                    existingScript.remove()
+    // Defer tracking data collection by 3s so it doesn't compete with critical resources
+    const trackingTimeout = setTimeout(() => {
+      collectMetaTrackingData().then((trackingData) => {
+        if (trackingData) {
+          applyTrackingToButtons(trackingData)
+        }
+
+        // Watch for new Fillout buttons added to the DOM
+        const observer = new MutationObserver((mutations) => {
+          // Check if any new fillout buttons were added
+          for (const mutation of mutations) {
+            for (const node of mutation.addedNodes) {
+              if (node instanceof Element) {
+                const newButtons = node.querySelectorAll
+                  ? node.querySelectorAll("[data-fillout-id]:not([data-data])")
+                  : []
+                if (
+                  node.matches?.("[data-fillout-id]:not([data-data])") ||
+                  newButtons.length > 0
+                ) {
+                  // Apply tracking data to new buttons
+                  if (trackingData) {
+                    applyTrackingToButtons(trackingData)
                   }
-                  loadFilloutScript()
+                  // Re-initialize Fillout for new buttons by removing initialized flag
+                  const uninitializedButtons = document.querySelectorAll(
+                    "[data-fillout-id]:not([data-fillout-initialized])",
+                  )
+                  if (uninitializedButtons.length > 0) {
+                    // Trigger Fillout re-scan by re-adding script
+                    const existingScript = document.querySelector(
+                      'script[src="https://server.fillout.com/embed/v1/"]',
+                    )
+                    if (existingScript) {
+                      existingScript.remove()
+                    }
+                    loadFilloutScript()
+                  }
+                  break
                 }
-                break
               }
             }
           }
-        }
+        })
+        observer.observe(document.body, { childList: true, subtree: true })
       })
-      observer.observe(document.body, { childList: true, subtree: true })
-    })
+    }, 3000)
 
     return () => {
+      clearTimeout(trackingTimeout)
       document.body.style.overflow = ""
     }
   })

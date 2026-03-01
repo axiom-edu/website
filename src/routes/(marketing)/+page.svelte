@@ -1,7 +1,8 @@
 <script lang="ts">
-  import Hero3D from "$lib/components/Hero3D.svelte"
   import { onMount } from "svelte"
+  import { WebsiteBaseUrl } from "../../config"
 
+  let Hero3D: any = $state(null)
   let carouselElement: HTMLElement | null = null
   let currentPage = 0
   let totalPages = 1
@@ -65,7 +66,11 @@
     )
   }
 
-  onMount(() => {
+  onMount(async () => {
+    // Lazy-load Three.js Hero3D component after page is interactive
+    const module = await import("$lib/components/Hero3D.svelte")
+    Hero3D = module.default
+
     carouselElement = document.getElementById("coursesCarousel")
     if (carouselElement) {
       carouselElement.addEventListener("scroll", updateActiveDot)
@@ -86,14 +91,40 @@
 </script>
 
 <svelte:head>
-  <title>Axiom Education</title>
+  <title>Axiom Education | Personalised VCE Tutoring in Melbourne</title>
+  <meta
+    name="description"
+    content="Personalised VCE tutoring that meets you where you are. Small groups of 1–5 students, pedagogy-first teaching, and custom resources. Book a free trial today."
+  />
+  <link rel="canonical" href={WebsiteBaseUrl} />
+  <meta
+    property="og:title"
+    content="Axiom Education | Personalised VCE Tutoring in Melbourne"
+  />
+  <meta
+    property="og:description"
+    content="Small enough to care, skilled enough to deliver. Personalised VCE tutoring with 1:1 or small group classes, expert tutors and custom resources."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={WebsiteBaseUrl} />
+  <meta name="twitter:card" content="summary" />
+  <meta
+    name="twitter:title"
+    content="Axiom Education | Personalised VCE Tutoring"
+  />
+  <meta
+    name="twitter:description"
+    content="Personalised VCE tutoring with small groups, expert tutors and custom resources. Book a free trial today."
+  />
 </svelte:head>
 
 <div class="min-h-screen font-sans text-base-content relative overflow-hidden">
   <!-- HERO SECTION -->
   <section class="relative pt-20 pb-32 px-4 sm:px-4 mobile-padding text-center">
-    <!-- 3D Background -->
-    <Hero3D />
+    <!-- 3D Background (lazy-loaded) -->
+    {#if Hero3D}
+      <svelte:component this={Hero3D} />
+    {/if}
 
     <div class="relative z-10 max-w-4xl mx-auto mt-10">
       <h1
@@ -489,10 +520,10 @@
             </div>
             <div class="course-card__levels">
               <span class="course-card__pill course-card__pill--teal"
-              >Units 1/2</span
+                >Units 1/2</span
               >
               <span class="course-card__pill course-card__pill--teal"
-              >Units 3/4</span
+                >Units 3/4</span
               >
             </div>
             <p class="course-card__text">

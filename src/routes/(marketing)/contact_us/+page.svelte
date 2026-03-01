@@ -71,6 +71,14 @@
   }
 </script>
 
+<svelte:head>
+  <title>Contact Us | Axiom Education</title>
+  <meta
+    name="description"
+    content="Get in touch with Axiom Education. Ask about our personalised VCE tutoring, get a quote, or discuss your learning needs."
+  />
+</svelte:head>
+
 <div
   class="flex flex-col lg:flex-row mx-auto my-4 min-h-[70vh] place-items-center lg:place-items-start place-content-center"
 >
