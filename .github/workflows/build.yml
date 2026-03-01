@@ -19,5 +19,8 @@ jobs:
       - name: NPM install
         run: npm install
 
+      - name: Sync SvelteKit
+        run: npx svelte-kit sync
+
       - name: SvelteKit Build
         run: npm run build
