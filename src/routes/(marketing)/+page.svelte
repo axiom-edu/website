@@ -489,7 +489,10 @@
             </div>
             <div class="course-card__levels">
               <span class="course-card__pill course-card__pill--teal"
-                >Units 3/4</span
+              >Units 1/2</span
+              >
+              <span class="course-card__pill course-card__pill--teal"
+              >Units 3/4</span
               >
             </div>
             <p class="course-card__text">
