@@ -6,9 +6,6 @@ const config = {
   kit: {
     // Use Cloudflare Pages adapter for deployment
     adapter: adapter(),
-    // allow up to 150kb of style to be inlined with the HTML
-    // Faster FCP (First Contentful Paint) by reducing the number of requests
-    inlineStyleThreshold: 150000,
     prerender: {
       // Ignore missing IDs on blog pages (blog not yet implemented)
       handleMissingId: "warn",

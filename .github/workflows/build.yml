@@ -29,27 +29,3 @@ jobs:
 
       - name: SvelteKit Build
         run: npm run build
-        continue-on-error: true
-
-      - name: Debug SSR modules
-        if: failure() || success()
-        run: |
-          echo "=== Checking SSR output files for syntax errors ==="
-          find .svelte-kit/output/server -name '*.js' | while read f; do
-            node --check "$f" 2>/dev/null || echo "SYNTAX ERROR IN: $f"
-          done
-          echo "=== Checking external dependencies ==="
-          node -e "
-          const deps = ['@stitches/core','@supabase/auth-ui-shared','@supabase/ssr','@supabase/supabase-js','@sveltejs/kit','clsx','cookie','devalue','handlebars','resend','set-cookie-parser','stripe'];
-          async function test() {
-            for (const dep of deps) {
-              try { await import(dep); console.log('OK:', dep); }
-              catch(e) { console.log('FAIL:', dep, e.message?.substring(0,200)); }
-            }
-          }
-          test();
-          "
-          echo "=== Checking stylesheets JS files ==="
-          for f in .svelte-kit/output/server/stylesheets/*.js; do
-            node --check "$f" 2>/dev/null && echo "OK: $f" || echo "SYNTAX ERROR: $f"
-          done
