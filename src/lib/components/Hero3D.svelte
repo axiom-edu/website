@@ -182,8 +182,7 @@
       return new THREE.Vector3(x, y, z).multiplyScalar(curveScale)
     }
 
-    const Vector3Curve: typeof THREE.Curve = THREE.Curve
-    class HelixCurve extends Vector3Curve {
+    class HelixCurve extends THREE.Curve<THREE.Vector3> {
       curveScale: number
       constructor(scale = 1) {
         super()
