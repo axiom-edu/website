@@ -2,7 +2,7 @@
   import { onMount } from "svelte"
   import { WebsiteBaseUrl } from "../../config"
 
-  let Hero3D: any = $state(null)
+  let Hero3D: any = null
   let carouselElement: HTMLElement | null = null
   let currentPage = 0
   let totalPages = 1
