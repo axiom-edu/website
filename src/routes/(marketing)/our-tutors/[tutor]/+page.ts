@@ -197,10 +197,11 @@ const tutorsData: Record<string, TutorData> = {
       },
     ],
     bio: [
-      "Halo!! My name is Helen, a Bachelor of Commerce student at the University of Melbourne and a huuuge music enthusiast (from classical to Kpop 😎🎶).",
-      "Having recently completed VCE Accounting while also securing an undergraduate consultant position at a prestigious accounting and advisory firm that is ranked top 10 in Australia, my understanding of accounting concepts will allow me to bring both theoretical knowledge and real-world experience to my tutoring.",
-      "I am also very passionate about English Language, and would love to help you not only understand and master the subject for the best scores, but to apply these linguistic strategies to everyday scenarios, boosting your everyday communication skills that will be a lifelong asset.",
-      "After tutoring many students myself, as well as being tutored in various places in my own VCE journey, I know exactly what it's like from both ends. I will take the time to understand your unique challenges and tailor our learning to suit your needs. With over 200 hours of tutoring experience, my teaching method focuses on equipping you with the specific skillset required for each SAC and ultimately the final exam, all delivered in a systematic, enjoyable and often funny way.",
+      "Hi, my name is Helen - nice to meet you here!",
+      "As a Bachelor of Commerce student at the University of Melbourne, I combine strong academic foundations with hands-on professional experience as a part time external auditor.",
+      "Having recently completed VCE Accounting myself, I understand the subject to its core - both as a student who has navigated the pressures of SACs and the final exam, and as a professional who applies these principles daily in a demanding corporate environment for clients across a diverse range of industries.",
+      "With hundreds of hours of tutoring experience, I bring a well-developed, student-centred approach to every session, as well as a real-world perspective that goes beyond the classroom. What sets my tutoring apart is a genuine commitment to meeting each student where they are. I am known for my patience and my ability to break down complex accounting concepts into clear, digestible steps. No matter how many times we need to revisit something, I will find a new way to explain it until it clicks.",
+      "My teaching method focuses on equipping you with the specific skillset and understanding required for each SAC and ultimately the final exam, all delivered in a systematic, enjoyable and often funny way. My goal is not just to help you get the best results, but to build the kind of deep conceptual understanding that makes accounting feel logical and intuitive. Ultimately, my hope is that you leave not just with better marks, but with a genuine enthusiasm for commerce that carries you into university and beyond.",
       "No matter what your goals are in the VCE journey, I'm here to support you with a personalised roadmap to help you succeed.",
     ],
     credentials: [
