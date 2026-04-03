@@ -192,7 +192,7 @@ const tutorsData: Record<string, TutorData> = {
     socialLinks: [
       {
         type: "linkedin",
-        url: "https://www.linkedin.com/in/hailun-yang-093375259",
+        url: "https://www.linkedin.com/in/helen-yang-093375259/",
         label: "LinkedIn",
       },
     ],
